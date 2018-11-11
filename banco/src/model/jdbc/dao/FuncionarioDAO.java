@@ -58,6 +58,5 @@ public class FuncionarioDAO {
 			rs.close();
 			stmt.close();
 		}
-
 	}
 }
