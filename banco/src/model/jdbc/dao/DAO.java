@@ -21,10 +21,9 @@ public abstract class DAO<T, I> {
 	public static void criaBanco() throws SQLException {
 		String[] sql = FileUtil.readFile("resources/tabelas.sql").split(";");
 		Statement stmt = ConnectionFactory.getConnection().createStatement();
-		for (int i=0; i<sql.length; i++) {
-			if(sql[i].length()>1)
+		for (int i=0; i<sql.length; i++)
+			if(sql[i].length()>2)
 				stmt.executeUpdate(sql[i]);			
-		}
 		stmt.close();
 	}
 	
