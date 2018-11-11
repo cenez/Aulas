@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="chainofresponsibility.CalculadorDeDescontos" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/chainofresponsibility/CalculadorDeDescontos.java" binary="false" 
+    label="calculadorDeDescontos" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="220" y="0"/>    
+    <execution id="2">      
+      <position height="211" width="163" x="5" y="117"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="19" width="7" x="83" y="271"/>    
+    </execution>  
+  </object>  
+  <object id="6" language="java" name="chainofresponsibility.DescontoPorItens" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/chainofresponsibility/DescontoPorItens.java" binary="false" label="descontoPorItens" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="236" y="0"/>    
+    <execution id="4">      
+      <position height="173" width="126" x="172" y="136"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="19" width="7" x="232" y="229"/>    
+    </execution>  
+  </object>  
+  <object id="11" language="java" name="chainofresponsibility.DescontoPorValor" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/chainofresponsibility/DescontoPorValor.java" binary="false" label="descontoPorValor" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="476" y="0"/>    
+    <execution id="8">      
+      <position height="112" width="127" x="302" y="155"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="19" width="7" x="362" y="193"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="chainofresponsibility.SemDesconto" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/chainofresponsibility/SemDesconto.java" binary="false" label="semDesconto" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="607" y="0"/>    
+    <execution id="13">      
+      <position height="57" width="104" x="433" y="174"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="desconto(chainofresponsibility.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="7" operation="desconto(chainofresponsibility.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="12" operation="desconto(chainofresponsibility.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="17" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>
+</sequence-diagram>

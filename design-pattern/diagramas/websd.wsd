@@ -1,0 +1,6 @@
+Atendente->Sistema: autenticar(user, pass): booleam
+alt Sucesso
+Sistema-->Atendente: true
+else Falha
+Sistema-->Atendente: false
+end

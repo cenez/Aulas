@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="templatemethod.IPI" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/templatemethod/IPI.java" binary="false" label="ipi" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="314" y="0"/>    
+    <execution id="2">      
+      <position height="57" width="74" x="225" y="73"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="19" width="74" x="225" y="150"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="19" width="74" x="225" y="208"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="19" width="74" x="225" y="274"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="templatemethod.TemplateDeImpostoCondicionado" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/templatemethod/TemplateDeImpostoCondicionado.java" binary="false" 
+    label="templateDeImpostoCondicionado" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="131" y="0"/>    
+    <execution id="4">      
+      <position height="19" width="216" x="5" y="92"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="57" width="216" x="5" y="131"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="57" width="216" x="5" y="189"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="57" width="216" x="5" y="255"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="19" width="216" x="5" y="325"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="57" width="216" x="83" y="366"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="57" width="216" x="83" y="431"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="57" width="216" x="83" y="495"/>    
+    </execution>  
+  </object>  
+  <object id="25" language="java" name="templatemethod.IOF" project="PadraoProjeto" 
+    file="/PadraoProjeto/src/templatemethod/IOF.java" binary="false" label="iof" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="477" y="0"/>    
+    <execution id="26">      
+      <position height="57" width="74" x="303" y="306"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="19" width="74" x="303" y="385"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="19" width="74" x="303" y="450"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="19" width="74" x="303" y="514"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="calcular(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="10" operation="taxaMaxima(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="12" operation="taxaMinima(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="14" operation="excedeLimitesNo(strategy.Orcamento):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="17" operation="taxaMaxima(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="20" operation="taxaMinima(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="23" operation="excedeLimitesNo(strategy.Orcamento):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="27" operation="calcular(strategy.Orcamento):double" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>
+</sequence-diagram>
