@@ -12,6 +12,8 @@ import model.jdbc.dao.PessoaDAO;
 
 public class MainTestaBanco {
 	public static void main(String[] args) throws SQLException {
+		DAO.criaBanco();
+		
 		Pessoa joao = new Pessoa(1l, "Joao Silva", "Rua 5", "123", "joao@x.com");
 		Pessoa maria = new Pessoa(2l, "Maria Silva", "Rua 6", "321", "maria@x.com");
 		
