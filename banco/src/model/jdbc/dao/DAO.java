@@ -1,5 +1,6 @@
 package model.jdbc.dao;
 
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,13 +13,26 @@ import model.jdbc.ConnectionFactory;
 
 public class DAO<T> {
 	private Connection connection;
-	public DAO(Connection con) {
-		this.connection = con;
-	}
+	private Class<T> persistentClass;
+	private String[] objectFields = null;
+	
 	public DAO() throws SQLException {
 		this.connection = ConnectionFactory.getConnection();
 	}
-	public void adiciona(T entity) throws SQLException {
+	public DAO(Connection con, Class<T> persistentClass) {
+		this.connection = con;
+		this.persistentClass = persistentClass;
+		this.configFields();
+	}
+	private void configFields() {
+		int i = 1;
+		Field[] atributos = persistentClass.getClass().getDeclaredFields();
+		this.objectFields = new String[atributos.length+1];
+		this.objectFields[0] = persistentClass.getClass().getName();
+		for (Field field : atributos)
+			this.objectFields[i++] = field.getName();
+	}
+	public void adiciona(Contato contato) throws SQLException {
 		PreparedStatement stmt = this.connection
 				.prepareStatement("insert into contatos (nome,email,endereco) values (?, ?, ?)");
 
@@ -87,4 +101,6 @@ public class DAO<T> {
 		stmt.close();
 		return c; 
 	}
+	public String[] getObjectFields() { return objectFields; }
+	public void setObjectFields(String[] objectFields) { this.objectFields = objectFields; }
 }
