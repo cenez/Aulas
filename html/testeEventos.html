@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Evento onClick</title>
+		
+	</head>
+	<body onload="checkCookies()">
+		<script>
+			function checkCookies() {
+				if (navigator.cookieEnabled==true) {
+					text = "Cookies estão habilitados!!!";
+				}
+				document.getElementById("cookie").innerHTML = text;
+			}
+			function upperFunc() {
+				var x = document.getElementById("fname");
+				x.value = x.value.toUpperCase();
+			}
+		</script>
+		<hr><p id="cookie"></p>
+		<hr> <h1 onclick="this.innerHTML='Evento onClick disparado com seu clique!!!'">Inline: Clique neste h1....</h1>
+		<hr> Nome: <input type="text" id="fname" value="para upper case" onchange="upperFunc()">
+	</body>
+</html>
+
+

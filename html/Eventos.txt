@@ -1,0 +1,19 @@
+Inline:                          Em um arquivo externo, usando um manipulador de eventos
+Ou em um manipulador de eventos: em um arquivo externo
+
+Eventos em html com javascript
+onLoad 		carrega o elemento por completo
+onClick 	o elemento é clicado pelo usuário
+onChange 	muda o valor do elemento
+
+onFocus 	ao entrar em foco no elemento
+onBlur 		ao remover o foco do elemento
+onKeyDown 	o usuário pressiona uma tecla sobre o elemento
+
+onKeyPress 	o usuário pressiona uma tecla sobre o elemento. Algumas teclas não pega, como backspace.
+onKeyUp 	o usuário libera uma tecla sobre o elemento.
+onMouseOver 	define ação quando o usuário passa o mouse sobre o elemento
+onMouseOut 	define ação quando o usuário retira o mouse sobre o elemento
+onSubmit 	define ação ao enviar um formulário
+
+

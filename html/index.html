@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titulo</title>
+	<script src="codes.js" charset="utf-8"></script>
+    </head>
+    <body>
+      <center>
+	<hr> <h1 onclick="this.innerHTML='Evento onClick disparado com seu clique!!!'">Inline: Clique neste h1....</h1>
+	<hr> <label id="cookie""></label>
+	<hr> <button id="randomico">randomico</button>
+	<hr> ToUpperCase: <input type="text" id="toUpperCase" value="toUpperCase"/> <hr>	
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#A10A10;width:180px;height:20px;padding:20px;">
+		Passar o mouse!
+	</div>
+	<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:180px;height:20px;padding:20px;">
+		Clique aqui
+	</div>
+	<hr>
+	<form id="meuForm" action="pagina.html" onsubmit="onSubmit()">
+		<input type="text" id="txtTexto" name="texto"/>
+		<input type="submit" />
+	</form>
+	<hr>
+	<form>
+		<input type="text" id="txtInput" value="teste" onfocus="onFocus()" onblur="onBlur()" onkeydown="onKeyDown(this)" onkeypress="onKeyPress(this)" onkeyup="onKeyUp(this)"/> <br/>
+	</form>
+	<label id="lblKeyDown""></label> <br/>
+	<label id="lblKeyPress""></label> <br/>
+	<label id="lblKeyUp""></label> <br/>
+	<hr>
+      </center>
+    </body>
+</html>
+
