@@ -1,4 +1,4 @@
-package model.entidade.empresa;
+package model.entidades;
 
 public class Contrato {
 	private Long id;

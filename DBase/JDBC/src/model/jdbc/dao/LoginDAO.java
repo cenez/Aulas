@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.entidade.empresa.Login;
+import model.entidades.Login;
 
 public class LoginDAO extends DAO<Login, Long> {
 	private PessoaDAO pessoaDao;

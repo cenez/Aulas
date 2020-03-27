@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.entidade.empresa.Empresa;
+import model.entidades.Empresa;
 
 public class EmpresaDAO extends DAO<Empresa, Long> {
 	public EmpresaDAO(Connection con) {

@@ -1,12 +1,12 @@
-package all_tests;
+package view;
 
 import java.sql.SQLException;
 
-import model.entidade.empresa.Contrato;
-import model.entidade.empresa.Empresa;
-import model.entidade.empresa.Funcao;
-import model.entidade.empresa.Login;
-import model.entidade.empresa.Pessoa;
+import model.entidades.Contrato;
+import model.entidades.Empresa;
+import model.entidades.Funcao;
+import model.entidades.Login;
+import model.entidades.Pessoa;
 import model.jdbc.dao.ContratoDAO;
 import model.jdbc.dao.DAO;
 import model.jdbc.dao.EmpresaDAO;

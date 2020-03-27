@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.entidade.empresa.Contrato;
+import model.entidades.Contrato;
 
 public class ContratoDAO extends DAO<Contrato, Long> {
 	private EmpresaDAO empresaDao;
