@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS cnz.funcao;
+DROP TABLE IF EXISTS cnz.pessoa;
+DROP TABLE IF EXISTS cnz.empresa;
+
+CREATE TABLE cnz.pessoa (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NOT NULL,
+  endereco VARCHAR(100) NOT NULL,
+  cpf VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC));
+
+CREATE TABLE cnz.empresa (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NOT NULL,
+  cnpj VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC));
+
+CREATE TABLE cnz.funcao (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NOT NULL,
+  usuario VARCHAR(45) NOT NULL,
+  senha VARCHAR(45) NOT NULL,
+  pessoa_id INT NOT NULL,
+  empresa_id INT NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC),
+  FOREIGN KEY (pessoa_id) REFERENCES cnz.pessoa (id),
+  FOREIGN KEY (empresa_id) REFERENCES cnz.empresa (id)
+);
