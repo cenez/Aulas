@@ -10,30 +10,17 @@ import java.util.List;
 import model.entidade.empresa.Funcao;
 
 public class FuncaoDAO extends DAO<Funcao, Long> {
-	private EmpresaDAO empresaDao;
-	private PessoaDAO pessoaDao;
 	public FuncaoDAO(Connection con) {
 		super(con);
-		loadDaos();
 	}
 	public FuncaoDAO() throws SQLException {
 		super();
-		loadDaos();
-	}
-	private void loadDaos() {
-		empresaDao = new EmpresaDAO(this.connection);
-		pessoaDao = new PessoaDAO(this.connection);
 	}
 	public void adiciona(Funcao funcao) throws SQLException {
 		PreparedStatement stmt = this.connection.prepareStatement(
-				"insert into funcao (nome, usuario, senha, empresa_id, pessoa_id) values (?, ?, ?, ?, ?)"
+				"insert into funcao (nome) values (?)"
 		);
 		stmt.setString(1, funcao.getNome());
-		stmt.setString(2, funcao.getUsuario());
-		stmt.setString(3, funcao.getSenha());
-		stmt.setLong(4, funcao.getEmpresa().getId());
-		stmt.setLong(5, funcao.getPessoa().getId());
-		
 		stmt.execute();
 		stmt.close();
 	}
@@ -47,11 +34,6 @@ public class FuncaoDAO extends DAO<Funcao, Long> {
 			Funcao funcao = new Funcao();
 			funcao.setId(rs.getLong("id"));
 			funcao.setNome(rs.getString("nome"));
-			funcao.setUsuario(rs.getString("usuario"));
-			
-			funcao.setSenha(rs.getString("senha"));
-			funcao.setEmpresa(empresaDao.procura(rs.getLong("empresa_id")));
-			funcao.setPessoa(pessoaDao.procura(rs.getLong("pessoa_id")));
 			
 			list.add(funcao);
 		}
@@ -65,10 +47,6 @@ public class FuncaoDAO extends DAO<Funcao, Long> {
 				"update funcao set nome=?, usuario=?, senha=?, empresa_id=?, pessoa_id=? where id=?"
 		);
 		stmt.setString(1, funcao.getNome());
-		stmt.setString(2, funcao.getUsuario());
-		stmt.setString(3, funcao.getSenha());
-		stmt.setLong(4, funcao.getEmpresa().getId());
-		stmt.setLong(5, funcao.getPessoa().getId());
 		
 		stmt.setLong(6, funcao.getId());
 		stmt.execute();
@@ -92,20 +70,15 @@ public class FuncaoDAO extends DAO<Funcao, Long> {
 		Funcao funcao = new Funcao();
 		funcao.setId(rs.getLong("id"));
 		funcao.setNome(rs.getString("nome"));
-		funcao.setUsuario(rs.getString("usuario"));
-		funcao.setSenha(rs.getString("senha"));
-		funcao.setEmpresa(empresaDao.procura(rs.getLong("empresa_id")));
-		funcao.setPessoa(pessoaDao.procura(rs.getLong("pessoa_id")));
 		rs.close();
 		stmt.close();
 		return funcao; 
 	}
 	public boolean existeUnico(Funcao funcao) throws SQLException {
 		PreparedStatement stmt = connection.prepareStatement(
-				"select * from funcao where usuario=? and senha=?"
+				"select * from funcao where nome=?"
 		);
-		stmt.setString(1, funcao.getUsuario());
-		stmt.setString(2, funcao.getSenha());
+		stmt.setString(1, funcao.getNome());
 		ResultSet rs = stmt.executeQuery();
 		try {
 			// se nao existir nenhum funcionario, da erro

@@ -8,7 +8,7 @@ public class ConnectionFactory {
 	private static final String url = "jdbc:mysql://localhost/cnz";
 	private static final String driver = "com.mysql.jdbc.Driver";
 	private static final String usuario = "root";
-	private static final String senha = "123456";
+	private static final String senha = "hashmodel";
 	
 	public static Connection getConnection() throws SQLException {
 		try {
