@@ -7,3 +7,4 @@ public class Impressora implements ObserverGerarNota{
 		System.out.println("Imprimindo");
 	}
 }
+
